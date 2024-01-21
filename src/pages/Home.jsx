@@ -34,14 +34,10 @@ const Home = ({setLogin}) => {
     }
 
     useEffect(()=> {
-        console.log(data)
         getDataResponse()
     },[category])
 
 
-    useEffect(() => {
-        console.log(data)
-    },[data])
 
 
     const SideBarContainer = () => {

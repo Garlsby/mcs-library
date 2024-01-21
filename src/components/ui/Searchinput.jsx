@@ -12,7 +12,6 @@ const Searchinput = ({setData ,category, setLoading}) => {
       if (name === ""){
         const response = await getCategoryData(category)
         setData(response)
-        console.log(response)
         setLoading(false)
 
       }else {

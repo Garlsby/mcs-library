@@ -102,7 +102,6 @@ const Modal = ({action, type, data, setData, setLogin,setAction, getDataResponse
                         const response = await postData(dataType[toggle].toLowerCase() , dataEntry[toggle])
                         getDataResponse()
                         document.getElementById(`my_modal_${data.id}`).close();
-                        console.log(response)
                     }catch (error) {
                         console.error(error)
                     }
