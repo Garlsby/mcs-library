@@ -38,3 +38,17 @@ If you want to deploy the app, use the following command to build the project:
 ```bash
 npm run build
 ```
+
+## Modification Instructions
+
+To customize the application for your environment, follow the steps below:
+
+1. Open the .env file in the root directory of the project.
+2. Update the values for the following variables to match your web API base URLs:
+  ```bash
+  VITE_BASE_URL = "https://your-web-api-url/api/admin"
+  VITE_AUTHENTICATION_URL = "https://your-web-api-url/api/authentication"
+  ```
+Replace "https://your-web-api-url" with the actual base URL of your web API.
+
+3. Save the changes to the .env file.
