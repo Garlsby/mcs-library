@@ -90,19 +90,15 @@ const Modal = ({action, type, data, setData, setLogin,setAction, getDataResponse
                 case true:
                     if(dataEntry[toggle].title == "") {
                         setValidation("Title")
-                        console.log("required")
                         return 
                     }
                 case false:
                     if(dataEntry[toggle].name == "") {
                         setValidation("Name")
-                        console.log("required")
                         return 
                     }
                 default :      
                     try {
-                        console.log(dataEntry[toggle])
-                        console.log("Request Payload:", dataEntry[toggle]);
                         const response = await postData(dataType[toggle].toLowerCase() , dataEntry[toggle])
                         getDataResponse()
                         document.getElementById(`my_modal_${data.id}`).close();
@@ -131,15 +127,6 @@ const Modal = ({action, type, data, setData, setLogin,setAction, getDataResponse
             })
 
         }
-
-        const closeBtn = () => {
-            return (
-                <form method="dialog">
-                <button className="btn">Close</button>
-            </form>
-            )
-        }
-
         useEffect(() => {
             setValidation("")
         },[toggle])
@@ -251,7 +238,6 @@ const Modal = ({action, type, data, setData, setLogin,setAction, getDataResponse
         const handleSelectChange = (event) => {
             const newValue = event.target.value
             setSelectedValue(event.target.value);
-            console.log(newValue)
             update({ key: "elementary", newValue: newValue, setObject: setHandle[type] })
         };
 
@@ -513,6 +499,8 @@ const Modal = ({action, type, data, setData, setLogin,setAction, getDataResponse
                 })
             }catch(error){
                 console.log(error)
+            }finally{
+                setBookItem([])
             }
         }
 

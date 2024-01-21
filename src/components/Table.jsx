@@ -11,7 +11,6 @@ const Table = ({ tableData, category, setData}) => {
     try {
       const response = await getCategoryData("book")
       setBookData(response)
-      console.log(response)
       return response
     }catch(error) {
       console.error(error)
@@ -86,7 +85,7 @@ const Table = ({ tableData, category, setData}) => {
               data={rowData}/>
               <tr key={rowIndex}  className=" bg-white border-b dark:bg-slate-900 dark:border-gray-700">
                 {Object.keys(categoryProperties[category]).map((property, colIndex) => (
-                  <td key={colIndex} onClick={() => document.getElementById(`my_modal_${rowData.id}_borrow`).showModal()} className="px-6 py-4">
+                  <td key={colIndex}  onClick={() => {category === "student" ? document.getElementById(`my_modal_${rowData.id}_borrow`).showModal() : ""}} className="cursor-pointer px-6 py-4">
                     {(() => {
                       switch (property) {
                         case 'imageUrl':

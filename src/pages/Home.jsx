@@ -34,9 +34,14 @@ const Home = ({setLogin}) => {
     }
 
     useEffect(()=> {
+        console.log(data)
         getDataResponse()
     },[category])
 
+
+    useEffect(() => {
+        console.log(data)
+    },[data])
 
 
     const SideBarContainer = () => {
@@ -104,7 +109,7 @@ const Home = ({setLogin}) => {
   return (
     <div className="flex w-screen overflow-hidden">
         {SideBarContainer()}
-        <div className="flex w-full overflow-y-scroll xl:overflow-auto flex-col h-screen xl:flex-row">
+        <div className="flex w-full overflow-y-scroll xl:overflow-auto flex-col h-screen">
             {SearchInputContainer()}
             {TableContainer()}
         </div>
